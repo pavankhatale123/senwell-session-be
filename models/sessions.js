@@ -4,7 +4,6 @@ const SessionSchema = new mongoose.Schema({
   session: {
     type: String,
     required: true,
-    unique: true,
   },
   username: {
     type: String,
