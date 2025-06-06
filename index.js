@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const DBConnection = require("./DB/connection.js");
 
 const User = require("./models/user.js");
@@ -7,6 +8,9 @@ const Session = require("./models/sessions.js");
 const app = express();
 
 DBConnection();
+
+app.use(cors());
+
 app.use(express.json());
 
 app.post("/login", async (req, res) => {
